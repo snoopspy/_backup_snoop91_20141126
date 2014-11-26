@@ -10,7 +10,10 @@ CONFIG(debug, debug|release) {
 
 contains(QT, gui) {
 	SNOOP_LIB_NAME=$${SNOOP_LIB_NAME}_gui
-} else {
+}
+
+android-g++ {
+	SNOOP_LIB_NAME=$${SNOOP_LIB_NAME}_android
 }
 
 #-------------------------------------------------
@@ -35,7 +38,8 @@ DEPENDPATH            +=   $${SNOOP_PATH}
 LIBS                  += -L$${SNOOP_PATH}/lib -l$${SNOOP_LIB_NAME}
 CONFIG(SNOOP_LIB_BUILD) {
 } else {
-	win32:PRE_TARGETDEPS +=   $${SNOOP_PATH}/lib/$${SNOOP_LIB_NAME}.lib
-	unix: PRE_TARGETDEPS +=   $${SNOOP_PATH}/lib/lib$${SNOOP_LIB_NAME}.a
-	unix:LIBS            +=  -lpcap
+	win32:PRE_TARGETDEPS       +=   $${SNOOP_PATH}/lib/$${SNOOP_LIB_NAME}.lib
+	linux-g++:PRE_TARGETDEPS   +=  $${VDREAM_PATH}/lib/lib$${SNOOP_LIB_NAME}.a
+	android-g++:PRE_TARGETDEPS +=  $${VDREAM_PATH}/lib/lib$${SNOOP_LIB_NAME}.so
+	linux:LIBS                 +=  -lpcap
 }
