@@ -53,7 +53,7 @@ private:
 // ----------------------------------------------------------------------------
 // SnoopInterfaces
 // ----------------------------------------------------------------------------
-class SnoopInterfaces : public QList<SnoopInterface>, public VXmlable , private VNonCopyable // gilgil temp 2012.06.04
+class SnoopInterfaces : public QList<SnoopInterface>, public VXmlable
 {
 	friend class SnoopRemote;
 	friend class _SnoopInterfaces;
