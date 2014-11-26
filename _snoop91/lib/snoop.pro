@@ -1,19 +1,3 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2012-06-04T09:44:29
-#
-#-------------------------------------------------
-CONFIG += SNOOP_LIB_BUILD
-#QT    -= gui
-#QT    += gui widgets
-
-include (snoop.pri)
-
-TARGET   = $${SNOOP_LIB_NAME}
-TEMPLATE = lib
-CONFIG  += staticlib
-DESTDIR  = ../lib
-
 SOURCES += \
     ../include/capture/snoopadapter.cpp \
     ../include/capture/snooparpspoof.cpp \
