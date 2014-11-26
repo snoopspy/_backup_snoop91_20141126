@@ -102,17 +102,17 @@ QVariant DomModel::data(const QModelIndex &index, int role) const
 					if (dynamic_cast<DomAttrItem*>(item) != NULL) return ((DomAttrItem*)item)->attr().value();
 					else return QVariant();
 				/*
-					  for (int i = 0; i < attributeMap.count(); ++i) {
-						  QDomNode attribute = attributeMap.item(i);
-						  attributes << attribute.nodeName() + "=\""
+						for (int i = 0; i < attributeMap.count(); ++i) {
+							QDomNode attribute = attributeMap.item(i);
+							attributes << attribute.nodeName() + "=\""
 										+attribute.nodeValue() + "\"";
-					  }
-					  return attributes.join(" ");
+						}
+						return attributes.join(" ");
 				*/
 				case 2:
-					  return element.nodeValue().split("\n").join(" ");
+						return element.nodeValue().split("\n").join(" ");
 				default:
-					  return QVariant();
+						return QVariant();
 		}
 }
 //! [4]
@@ -138,12 +138,12 @@ QVariant DomModel::headerData(int section, Qt::Orientation orientation,
 		if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
 		{
 				switch (section) {
-					  case 0:
-						  return tr("Name");
-					  case 1:
-						  return tr("Value");
-					  default:
-						  return QVariant();
+						case 0:
+							return tr("Name");
+						case 1:
+							return tr("Value");
+						default:
+							return QVariant();
 				}
 		}
 
@@ -153,7 +153,7 @@ QVariant DomModel::headerData(int section, Qt::Orientation orientation,
 
 //! [7]
 QModelIndex DomModel::index(int row, int column, const QModelIndex &parent)
-					  const
+						const
 {
 		if (!hasIndex(row, column, parent))
 				return QModelIndex();

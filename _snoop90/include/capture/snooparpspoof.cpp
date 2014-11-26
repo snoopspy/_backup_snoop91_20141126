@@ -692,8 +692,8 @@ void SnoopArpSpoof::preventArpRecover(ETH_HDR* ethHdr, ARP_HDR* arpHdr)
 
 					if (session2.targetMac == srcMac)
 					{
-					  sendArpInfect(session2);
-					  LOG_DEBUG("send ARP infect(%s > %s)", qPrintable(session2.senderIp.str()), qPrintable(session2.targetIp.str()));
+						sendArpInfect(session2);
+						LOG_DEBUG("send ARP infect(%s > %s)", qPrintable(session2.senderIp.str()), qPrintable(session2.targetIp.str()));
 					}
 				}
 				continue;
