@@ -114,12 +114,12 @@ typedef u_int8_t  oid;
 
 u_int8_t *
 libnet_build_asn1_int(
-    u_int8_t *,           /* Pointer to the output buffer */
-    int *,              /* Number of valid bytes left in the buffer */
-    u_int8_t,             /* ASN object type */
-    int32_t *,             /* Pointer to a int32_t integer */
-    int                 /* Size of a int32_t integer */
-    );
+		u_int8_t *,           /* Pointer to the output buffer */
+		int *,              /* Number of valid bytes left in the buffer */
+		u_int8_t,             /* ASN object type */
+		int32_t *,             /* Pointer to a int32_t integer */
+		int                 /* Size of a int32_t integer */
+		);
 
 
 /*
@@ -131,12 +131,12 @@ libnet_build_asn1_int(
 
 u_int8_t *
 libnet_build_asn1_uint(
-    u_int8_t *,           /* Pointer to the output buffer */
-    int *,              /* Number of valid bytes left in the buffer */
-    u_int8_t,             /* ASN object type */
-    u_int32_t *,           /* Pointer to an unsigned int32_t integer */
-    int                 /* Size of a int32_t integer */
-    );
+		u_int8_t *,           /* Pointer to the output buffer */
+		int *,              /* Number of valid bytes left in the buffer */
+		u_int8_t,             /* ASN object type */
+		u_int32_t *,           /* Pointer to an unsigned int32_t integer */
+		int                 /* Size of a int32_t integer */
+		);
 
 
 /*
@@ -148,12 +148,12 @@ libnet_build_asn1_uint(
 
 u_int8_t *
 libnet_build_asn1_string(
-    u_int8_t *,           /* Pointer to the output buffer */
-    int *,              /* Number of valid bytes left in the buffer */
-    u_int8_t,             /* ASN object type */
-    u_int8_t *,           /* Pointer to a string to be built into an object */
-    int                 /* Size of the string */
-    );
+		u_int8_t *,           /* Pointer to the output buffer */
+		int *,              /* Number of valid bytes left in the buffer */
+		u_int8_t,             /* ASN object type */
+		u_int8_t *,           /* Pointer to a string to be built into an object */
+		int                 /* Size of the string */
+		);
 
 
 /*
@@ -167,19 +167,19 @@ libnet_build_asn1_string(
 
 u_int8_t *
 libnet_build_asn1_header(
-    u_int8_t *,       /* Pointer to the start of the object */
-    int *,          /* Number of valid bytes left in buffer */
-    u_int8_t,         /* ASN object type */
-    int             /* ASN object length */
-    );
+		u_int8_t *,       /* Pointer to the start of the object */
+		int *,          /* Number of valid bytes left in buffer */
+		u_int8_t,         /* ASN object type */
+		int             /* ASN object length */
+		);
 
 
 u_int8_t *
 libnet_build_asn1_length(
-    u_int8_t *,       /* Pointer to start of object */
-    int *,          /* Number of valid bytes in buffer */
-    int             /* Length of object */
-    );
+		u_int8_t *,       /* Pointer to start of object */
+		int *,          /* Number of valid bytes in buffer */
+		int             /* Length of object */
+		);
 
 
 /*
@@ -194,11 +194,11 @@ libnet_build_asn1_length(
 
 u_int8_t *
 libnet_build_asn1_sequence(
-    u_int8_t *,
-    int *,
-    u_int8_t,
-    int
-    );
+		u_int8_t *,
+		int *,
+		u_int8_t,
+		int
+		);
 
 
 /*
@@ -210,12 +210,12 @@ libnet_build_asn1_sequence(
 
 u_int8_t *
 libnet_build_asn1_objid(
-    u_int8_t *,
-    int *,
-    u_int8_t,
-    oid *,
-    int
-    );
+		u_int8_t *,
+		int *,
+		u_int8_t,
+		oid *,
+		int
+		);
 
 
 /*
@@ -227,10 +227,10 @@ libnet_build_asn1_objid(
 
 u_int8_t *
 libnet_build_asn1_null(
-    u_int8_t *,
-    int *,
-    u_int8_t
-    );
+		u_int8_t *,
+		int *,
+		u_int8_t
+		);
 
 
 /*
@@ -242,12 +242,12 @@ libnet_build_asn1_null(
 
 u_int8_t *
 libnet_build_asn1_bitstring(
-    u_int8_t *,
-    int *,
-    u_int8_t,
-    u_int8_t *,       /* Pointer to the input buffer */
-    int             /* Length of the input buffer */
-    );
+		u_int8_t *,
+		int *,
+		u_int8_t,
+		u_int8_t *,       /* Pointer to the input buffer */
+		int             /* Length of the input buffer */
+		);
 
 
 #endif  /* __LIBNET_ASN1_H */

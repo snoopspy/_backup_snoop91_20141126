@@ -1830,7 +1830,7 @@ libnet_cq_getlabel(libnet_t *l);
  */
 libnet_t *
 libnet_cq_find_by_label(char *label);
-  
+	
 /**
  * [Context Queue] 
  * Destroys the entire context queue, calling libnet_destroy() on each
@@ -1967,7 +1967,7 @@ libnet_close_raw4(libnet_t *l);
  */
 int
 libnet_open_raw6(libnet_t *l);
-       
+			 
 /*
  * [Internal] 
  */
@@ -2069,13 +2069,13 @@ u_int8_t type);
 
 
  /*
-  * [Internal]
-  * Checksums are a real pain in the <beep>!!!
-  * Function updates referer used to compute the checksum. All
-  * pblock need to know where is their referer (ie IP header).
-  * So, this function is called each time a new IP header is inserted.
-  * It updates the ip_pos field (referer) of each subsequent pblock.
-  */
+	* [Internal]
+	* Checksums are a real pain in the <beep>!!!
+	* Function updates referer used to compute the checksum. All
+	* pblock need to know where is their referer (ie IP header).
+	* So, this function is called each time a new IP header is inserted.
+	* It updates the ip_pos field (referer) of each subsequent pblock.
+	*/
 void
 libnet_pblock_record_ip_offset(libnet_t *l, u_int32_t offset);
 

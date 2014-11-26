@@ -40,11 +40,11 @@
 typedef struct libnet_port_list_chain libnet_plist_t;
 struct libnet_port_list_chain
 {
-    u_int16_t node;                     /* node number */
-    u_int16_t bport;                    /* beggining port */
-    u_int16_t eport;                    /* terminating port */
-    u_int8_t  id;                       /* global array offset */
-    libnet_plist_t *next;               /* next node in the list */
+		u_int16_t node;                     /* node number */
+		u_int16_t bport;                    /* beggining port */
+		u_int16_t eport;                    /* terminating port */
+		u_int8_t  id;                       /* global array offset */
+		libnet_plist_t *next;               /* next node in the list */
 };
 
 
@@ -52,13 +52,13 @@ struct libnet_port_list_chain
 struct libnet_stats
 {
 #if (!defined(__WIN32__) || (__CYGWIN__))
-    u_int64_t packets_sent;             /* packets sent */
-    u_int64_t packet_errors;            /* packets errors */
-    u_int64_t bytes_written;            /* bytes written */
+		u_int64_t packets_sent;             /* packets sent */
+		u_int64_t packet_errors;            /* packets errors */
+		u_int64_t bytes_written;            /* bytes written */
 #else
-    __int64 packets_sent;               /* packets sent */
-    __int64 packet_errors;              /* packets errors */
-    __int64 bytes_written;              /* bytes written */
+		__int64 packets_sent;               /* packets sent */
+		__int64 packet_errors;              /* packets errors */
+		__int64 bytes_written;              /* bytes written */
 #endif
 };
 
@@ -76,12 +76,12 @@ typedef int32_t libnet_ptag_t;
  */
 struct libnet_protocol_block
 {
-    u_int8_t *buf;                      /* protocol buffer */
-    u_int32_t b_len;                    /* length of buf */
-    u_int16_t h_len;                    /* header length (for checksumming) */
-    u_int32_t ip_offset;                /* offset to IP header for csums */
-    u_int32_t copied;                   /* bytes copied */
-    u_int8_t type;                      /* type of pblock */
+		u_int8_t *buf;                      /* protocol buffer */
+		u_int32_t b_len;                    /* length of buf */
+		u_int16_t h_len;                    /* header length (for checksumming) */
+		u_int32_t ip_offset;                /* offset to IP header for csums */
+		u_int32_t copied;                   /* bytes copied */
+		u_int8_t type;                      /* type of pblock */
 /* this needs to be updated every time a new packet builder is added */
 #define LIBNET_PBLOCK_ARP_H             0x01    /* ARP header */
 #define LIBNET_PBLOCK_DHCPV4_H          0x02    /* DHCP v4 header */
@@ -146,11 +146,11 @@ struct libnet_protocol_block
 #define LIBNET_PBLOCK_IPV6_DESTOPTS_H   0x3d    /* IPv6 dest opts header */
 #define LIBNET_PBLOCK_IPV6_HBHOPTS_H    0x3e    /* IPv6 hop/hop opts header */
 #define LIBNET_PBLOCK_SEBEK_H           0x3f    /* Sebek header */
-    u_int8_t flags;                             /* control flags */
+		u_int8_t flags;                             /* control flags */
 #define LIBNET_PBLOCK_DO_CHECKSUM       0x01    /* needs a checksum */
-    libnet_ptag_t ptag;                 /* protocol block tag */
-    struct libnet_protocol_block *next; /* next pblock */
-    struct libnet_protocol_block *prev; /* prev pblock */
+		libnet_ptag_t ptag;                 /* protocol block tag */
+		struct libnet_protocol_block *next; /* next pblock */
+		struct libnet_protocol_block *prev; /* prev pblock */
 };
 typedef struct libnet_protocol_block libnet_pblock_t;
 
@@ -163,12 +163,12 @@ typedef struct libnet_protocol_block libnet_pblock_t;
 struct libnet_context
 {
 #if ((__WIN32__) && !(__CYGWIN__)) 
-    SOCKET fd;
-    LPADAPTER  lpAdapter;
+		SOCKET fd;
+		LPADAPTER  lpAdapter;
 #else
-    int fd;                             /* file descriptor of packet device */
+		int fd;                             /* file descriptor of packet device */
 #endif
-    int injection_type;                 /* raw (ipv4 or ipv6) or link */
+		int injection_type;                 /* raw (ipv4 or ipv6) or link */
 #define LIBNET_LINK     0x00            /* link-layer interface */
 #define LIBNET_RAW4     0x01            /* raw socket interface (ipv4) */
 #define LIBNET_RAW6     0x02            /* raw socket interface (ipv6) */
@@ -178,21 +178,21 @@ struct libnet_context
 #define LIBNET_RAW6_ADV 0x0a            /* advanced mode raw socket (ipv6) */
 #define LIBNET_ADV_MASK 0x08            /* mask to determine adv mode */
 
-    libnet_pblock_t *protocol_blocks;   /* protocol headers / data */
-    libnet_pblock_t *pblock_end;        /* last node in list */
-    u_int32_t n_pblocks;                /* number of pblocks */
+		libnet_pblock_t *protocol_blocks;   /* protocol headers / data */
+		libnet_pblock_t *pblock_end;        /* last node in list */
+		u_int32_t n_pblocks;                /* number of pblocks */
 
-    int link_type;                      /* link-layer type */
-    int link_offset;                    /* link-layer header size */
-    int aligner;                        /* used to align packets */
-    char *device;                       /* device name */
+		int link_type;                      /* link-layer type */
+		int link_offset;                    /* link-layer header size */
+		int aligner;                        /* used to align packets */
+		char *device;                       /* device name */
 
-    struct libnet_stats stats;          /* statistics */
-    libnet_ptag_t ptag_state;           /* state holder for pblock tag */
-    char label[LIBNET_LABEL_SIZE];      /* textual label for cq interface */
+		struct libnet_stats stats;          /* statistics */
+		libnet_ptag_t ptag_state;           /* state holder for pblock tag */
+		char label[LIBNET_LABEL_SIZE];      /* textual label for cq interface */
 
-    char err_buf[LIBNET_ERRBUF_SIZE];   /* error buffer */
-    u_int32_t total_size;               /* total size */
+		char err_buf[LIBNET_ERRBUF_SIZE];   /* error buffer */
+		u_int32_t total_size;               /* total size */
 };
 typedef struct libnet_context libnet_t;
 
@@ -204,16 +204,16 @@ typedef struct libnet_context libnet_t;
 typedef struct _libnet_context_queue libnet_cq_t;
 struct _libnet_context_queue
 {
-    libnet_t *context;                  /* pointer to libnet context */
-    libnet_cq_t *next;                  /* next node in the list */
-    libnet_cq_t *prev;                  /* previous node in the list */
+		libnet_t *context;                  /* pointer to libnet context */
+		libnet_cq_t *next;                  /* next node in the list */
+		libnet_cq_t *prev;                  /* previous node in the list */
 };
 
 struct _libnet_context_queue_descriptor
 {
-    u_int32_t node;                     /* number of nodes in the list */
-    u_int32_t cq_lock;                  /* lock status */
-    libnet_cq_t *current;               /* current context */
+		u_int32_t node;                     /* number of nodes in the list */
+		u_int32_t cq_lock;                  /* lock status */
+		libnet_cq_t *current;               /* current context */
 };
 typedef struct _libnet_context_queue_descriptor libnet_cqd_t;
 

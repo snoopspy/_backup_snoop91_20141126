@@ -69,8 +69,8 @@
  */
 #ifndef IN6ADDR_ERROR_INIT
 #define IN6ADDR_ERROR_INIT { { { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, \
-                                 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, \
-                                 0xff, 0xff } } }
+								                 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, \
+								                 0xff, 0xff } } }
 #endif
 
 /**
@@ -132,17 +132,17 @@
 
 /* used internally for checksum stuff */
 #define LIBNET_CKSUM_CARRY(x) \
-    (x = (x >> 16) + (x & 0xffff), (~(x + (x >> 16)) & 0xffff))
+		(x = (x >> 16) + (x & 0xffff), (~(x + (x >> 16)) & 0xffff))
 
 /* used interally for OSPF stuff */
 #define LIBNET_OSPF_AUTHCPY(x, y) \
-    memcpy((u_int8_t *)x, (u_int8_t *)y, sizeof(y))
+		memcpy((u_int8_t *)x, (u_int8_t *)y, sizeof(y))
 #define LIBNET_OSPF_CKSUMBUF(x, y) \
-    memcpy((u_int8_t *)x, (u_int8_t *)y, sizeof(y))  
+		memcpy((u_int8_t *)x, (u_int8_t *)y, sizeof(y))  
 
 /* used internally for NTP leap indicator, version, and mode */
 #define LIBNET_NTP_DO_LI_VN_MODE(li, vn, md) \
-    ((u_int8_t)((((li) << 6) & 0xc0) | (((vn) << 3) & 0x38) | ((md) & 0x7)))
+		((u_int8_t)((((li) << 6) & 0xc0) | (((vn) << 3) & 0x38) | ((md) & 0x7)))
 
 /* Not all systems have IFF_LOOPBACK */
 #ifdef IFF_LOOPBACK
@@ -167,7 +167,7 @@
  * libnet_cq_head().
  */
 #define for_each_context_in_cq(l) \
-    for (l = libnet_cq_head(); libnet_cq_last(); l = libnet_cq_next())
+		for (l = libnet_cq_head(); libnet_cq_last(); l = libnet_cq_next())
 
 /* return 1 if write lock is set on cq */
 #define cq_is_wlocked() (l_cqd.cq_lock & CQ_LOCK_WRITE)
