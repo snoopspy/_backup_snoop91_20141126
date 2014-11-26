@@ -2,7 +2,7 @@ Snoop Component Suite version 9.1
 ==================================
 
 # About
-Cross platform C++ library based on Qt.
+Packet processing C++ library based on Qt.
 
 # Develop Environment
 
